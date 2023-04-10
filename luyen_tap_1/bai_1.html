@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let count = 0;
+    let number = parseInt(prompt('nhâp độ dài mảng'));
+    for (; number > 50 || number < 1;) {
+        number = parseInt(prompt('nhâp laij độ dài mảng'));
+    }
+    for (let i = 0; i < number; i++) {
+        arr[i] = parseInt(prompt('nhập phần tử thứ ' + (i + 1)));
+    }
+    document.write(arr + '<br>');
+    for (let i = 0; i < number; i++) {
+        if ((arr[i] < arr[i - 1] && arr[i + 1] > arr[i]) || (arr[i] > arr[i + 1] && arr[i] > arr[i - 1])) {
+            continue;
+        } else {
+            count++;
+        }
+    }
+    count === 2 ? alert('true') : alert('false');
+</script>
+</body>
+</html>
